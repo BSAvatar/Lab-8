@@ -1,0 +1,46 @@
+//style mixin for list formatting
+@mixin liformat{
+  /*formats the list*/
+  ul{
+    font-size: $ulsize; //calls the ulsize variable which is set by the number you put in
+    font-family: $ulfont; //sets the font for ul (which is then inherited by li)
+    color: $ulcolor; //sets the color based on your choice
+
+    li{
+      font-size: $lisize; //calls the lisize variable which is based on ulsize
+    }
+  }
+  
+  .standard{
+    color: $licolor; //sets the color based on ulcolor
+  }
+  
+  .different{
+    color: $licolordiff; //sets a different color based on ulcolor
+    background-color: $licolor;
+  }
+  
+  .gradient-box{
+    @include gradient-bg(#4093ff, #fa877b, right); //uses the gradient-bg mixin to create a gradient background
+  }
+
+}
+
+//grid mixin
+@mixin grid{
+  /*media query for grid*/
+  @media screen and (max-width: $screen){
+    .grid {
+      display: grid;
+      grid-template-columns: auto;
+      background-color: rgb(0, 217, 255);
+    }
+  }
+  @media screen and (min-width: $screen){
+    .grid {
+      display: grid;
+      grid-template-columns: auto auto;
+      background-color: rgb(255, 23, 23);
+    }
+  }
+}
