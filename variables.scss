@@ -1,0 +1,18 @@
+//typography
+$ulsize: 30px;
+$lisize: round($ulsize*.8);
+$ulfont: Georgia;
+
+//colors
+$ulcolor: #36dada;
+$licolor: complement($ulcolor);
+$licolordiff: invert($ulcolor);
+$bgcolorgrit: invert(grayscale($ulcolor));
+$bgcolorgr: mix($ulcolor, $bgcolorgrit, 20);
+$bgcolorborder: adjust-hue($bgcolorgr, 20);
+$primarycolor: lighten($ulcolor, 20%); //This variable creates a new primary color by lightening the $ulcolor by 20%.
+$textcolor: contrast($ulcolor, #000, #f39191); //This variable generates a new text color
+$accentcolor: saturate($licolordiff, 50%); //This variable creates a new accent color by increasing by 50%.
+
+//screensize
+$screen: 1000px;
